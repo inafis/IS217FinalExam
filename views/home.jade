@@ -2,6 +2,78 @@ extends layout
 
 block content
   div.container
-    div.jumbotron
-      h1= title
-      p Welcome to #{title}
+     div(id="myModal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel",aria-hidden="true").modal.fade
+      div.modal-dialog
+       div.modal-content
+        div.modal-header
+         button(type="button",data-dismiss="modal", aria-hidden="true").close &times;
+         h4.modal-title Modal title
+        div.modal-body
+        div.modal-footer
+         button(type="button",data-dismiss="modal").btn.btn-default Close
+     h1(align="center") Motivation
+      br
+      br
+      div(align="center",id="motivation_pic").row
+       ul.thumbnails
+        li.col-md-1
+         a(href="#").thumbnail
+          img(src="../img/NuclearArms.jpg").img-rounded
+        li.col-md-1
+         a(href="#").thumbnail 
+          img(src="../img/NuclearArms.jpg").img-rounded
+        li.col-md-1
+         a(href="#").thumbnail 
+          img(src="../img/NuclearArms.jpg").img-rounded
+        li.col-md-1
+         a(href="#").thumbnail 
+          img(src="../img/NuclearArms.jpg").img-rounded
+      div(align="center", id="motivation_buttons").row
+        button(data-toggle="modal",data-target="#myModal").btn.btn-info.btn-mini.col-md-1.b1 View
+        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
+        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
+        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View
+     h1(align="center") Inspiration
+      br
+      br   
+      div(align="center",id="inspiration_pic").row
+       ul.thumbnails
+        li.col-md-1
+          a(href="#").thumbnail 
+           img(src="../img/NuclearArms.jpg").img-rounded
+        li.col-md-1
+          a(href="#").thumbnail 
+           img(src="../img/NuclearArms.jpg").img-rounded
+        li.col-md-1
+          a(href="#").thumbnail 
+           img(src="../img/NuclearArms.jpg").img-rounded
+        li.col-md-1
+          a(href="#").thumbnail 
+           img(src="../img/NuclearArms.jpg").img-rounded
+      div(align="center", id="motivation_buttons").row
+        button(data-toggle="modal",data-target="#myModal").btn.btn-info.btn-mini.col-md-1.b1 View
+        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
+        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
+        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View       
+     h1(align="center") Discpline
+      br
+      br
+      div(align="center",id="discipline_pic").row
+       ul.thumbnails
+        li.col-md-1
+          a(href="#").thumbnail 
+           img(src="../img/NuclearArms.jpg").img-rounded
+        li.col-md-1
+          a(href="#").thumbnail 
+           img(src="../img/NuclearArms.jpg").img-rounded
+        li.col-md-1
+          a(href="#").thumbnail 
+           img(src="../img/NuclearArms.jpg").img-rounded
+        li.col-md-1
+          a(href="#").thumbnail 
+           img(src="../img/NuclearArms.jpg").img-rounded
+      div(align="center", id="motivation_buttons").row
+        button(data-toggle="modal",data-target="#myModal").btn.btn-info.btn-mini.col-md-1.b1 View
+        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
+        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
+        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View

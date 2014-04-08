@@ -8,7 +8,6 @@ var express = require('express')
   , path = require('path');
 
 var app = express();
-
 // Configuration
 
 app.configure(function(){

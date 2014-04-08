@@ -3,7 +3,7 @@
  * GET home page.
  */
 
-var brand = 'Bootstrap for Jade';
+var brand = '8Bit inc.';
 
 exports.index = function(req, res){
   res.redirect('/home');
