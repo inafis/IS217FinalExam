@@ -1,4 +1,4 @@
-GetMotivated
+IS217 Final Exam, shopping cart
 ==================
 Built using Seraphim's BootStrap for Jade.
 
