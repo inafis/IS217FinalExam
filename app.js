@@ -5,10 +5,15 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , mongoose = require('mongoose')
+  , Schema = mongoose.Schema;
+var bodyParser = require('body-parser');
 
 var app = express();
 // Configuration
+mongoose.connect('mongodb://localhost:27017/myLaptops');
+require('./models/laptop');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -32,11 +37,16 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
+var laptop = require('./routes/laptops.js');
 // Routes
 
 app.get('/', routes.index);
 app.get('/home', routes.home);
+app.post('/home', routes.home);
 app.get('/about', routes.about);
+app.post('/laptops', laptop.formSend);
+app.get('/savedLaptops', laptop.saved);
+app.get('/saved', routes.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

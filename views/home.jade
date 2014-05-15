@@ -1,79 +1,39 @@
 extends layout
 
 block content
-  div.container
-     div(id="myModal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel",aria-hidden="true").modal.fade
-      div.modal-dialog
-       div.modal-content
-        div.modal-header
-         button(type="button",data-dismiss="modal", aria-hidden="true").close &times;
-         h4.modal-title Modal title
-        div.modal-body
-        div.modal-footer
-         button(type="button",data-dismiss="modal").btn.btn-default Close
-     h1(align="center") Motivation
-      br
-      br
-      div(align="center",id="motivation_pic").row
-       ul.thumbnails
-        li.col-md-1
-         a(href="#").thumbnail
-          img(src="../img/NuclearArms.jpg").img-rounded
-        li.col-md-1
-         a(href="#").thumbnail 
-          img(src="../img/NuclearArms.jpg").img-rounded
-        li.col-md-1
-         a(href="#").thumbnail 
-          img(src="../img/NuclearArms.jpg").img-rounded
-        li.col-md-1
-         a(href="#").thumbnail 
-          img(src="../img/NuclearArms.jpg").img-rounded
-      div(align="center", id="motivation_buttons").row
-        button(data-toggle="modal",data-target="#myModal").btn.btn-info.btn-mini.col-md-1.b1 View
-        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
-        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
-        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View
-     h1(align="center") Inspiration
-      br
-      br   
-      div(align="center",id="inspiration_pic").row
-       ul.thumbnails
-        li.col-md-1
-          a(href="#").thumbnail 
-           img(src="../img/NuclearArms.jpg").img-rounded
-        li.col-md-1
-          a(href="#").thumbnail 
-           img(src="../img/NuclearArms.jpg").img-rounded
-        li.col-md-1
-          a(href="#").thumbnail 
-           img(src="../img/NuclearArms.jpg").img-rounded
-        li.col-md-1
-          a(href="#").thumbnail 
-           img(src="../img/NuclearArms.jpg").img-rounded
-      div(align="center", id="motivation_buttons").row
-        button(data-toggle="modal",data-target="#myModal").btn.btn-info.btn-mini.col-md-1.b1 View
-        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
-        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
-        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View       
-     h1(align="center") Discpline
-      br
-      br
-      div(align="center",id="discipline_pic").row
-       ul.thumbnails
-        li.col-md-1
-          a(href="#").thumbnail 
-           img(src="../img/NuclearArms.jpg").img-rounded
-        li.col-md-1
-          a(href="#").thumbnail 
-           img(src="../img/NuclearArms.jpg").img-rounded
-        li.col-md-1
-          a(href="#").thumbnail 
-           img(src="../img/NuclearArms.jpg").img-rounded
-        li.col-md-1
-          a(href="#").thumbnail 
-           img(src="../img/NuclearArms.jpg").img-rounded
-      div(align="center", id="motivation_buttons").row
-        button(data-toggle="modal",data-target="#myModal").btn.btn-info.btn-mini.col-md-1.b1 View
-        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
-        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View 
-        button(data-toggle="modal",data-target="#").btn.btn-info.btn-mini.col-md-1.b2 View
+ div(align="center").container
+  h1 Your Price:
+  form(name='myform', action='/laptops', method='POST')
+   input(id="price",name="price",type="text")
+   hr
+   h3 Monitor Size
+   input(type="radio",name="screenSize", value="11",checked) 
+   | 11 Inches - Included
+   br
+   input(type="radio",name="screenSize", value="15")
+   | 15 Inches - $200
+   br
+   hr
+   h3 HardDrive Size
+   input(type="radio",name="hardDrive", value="128GB",checked) 
+   | 128GB - Included
+   br
+   input(type="radio",name="hardDrive", value="256GB")
+   | 256GB - $200
+   br
+   hr
+   h3 Ram
+   input(type="radio",name="ram", value="8GB",checked) 
+   | 8GB - Included
+   br
+   input(type="radio",name="ram", value="16GB")
+   | 16GB - $200
+   br
+   hr
+   button(id="save",type='button').btn.btn-primary Save to Cart
+   button(id="clear",type='button').btn.btn-primary Clear Price
+   br
+   br
+   div(align='center')
+   a(href='/saved') Click Here To Check Saved Laptop Price 
+   br

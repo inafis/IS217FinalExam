@@ -10,7 +10,7 @@ var postSchema = mongoose.Schema({
 	sub: String,
 	title: String,
 	author: String,
-	score: String
+	score: Number
 })
 
 var Post = mongoose.model('Post', postSchema)
@@ -25,8 +25,6 @@ var Post = mongoose.model('Post', postSchema)
 			var obj = listing[i].data;
 
 			//console.log(obj);
-
-
 			var domain = obj.domain;
 			var url = obj.url;
 			var sub = obj.subreddit;
@@ -40,7 +38,7 @@ var Post = mongoose.model('Post', postSchema)
 				sub: this.sub,
 				title: this.title,
 				author: this.author,
-				scaore: this.score
+				score: this.score
 
 			})
 
@@ -48,27 +46,13 @@ var Post = mongoose.model('Post', postSchema)
 				if(err) return console.error(err);
 			});
 
-			//fs.writeFile("img.jpg",url,function(){
-
-			//})
 
 			if(domain == "i.imgur.com" || "imgur.com"){
-				//stream.write(url + "\n");
-				//console.log(domain, url);
+				var check = Post.find({domain: "i.imgur.com"})
+				console.log(check);
 
-
-			}
-
-			//var pic = ("<img src="+url+"></img>");
-
-			
-				//$("#picsHere").fadeIn("slow").append(pic);
-
-			
+			}			
 		}
 
-
-		//console.log(data.data.author);
 	});
-
 

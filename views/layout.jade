@@ -14,7 +14,7 @@ html
             a.navbar-brand(href='#') #{brand}
           .navbar-collapse.collapse
             ul.nav.navbar-nav
-              - var obj = { 'home':'Home', 'about':'About' }
+              - var obj = { 'home':'Home', 'about':'About','saved':'Saved' }
                 - each val, key in obj
                   - if (id == key)
                     li.active
@@ -22,7 +22,7 @@ html
                   - else            
                     li
                       a(href='#{key}') #{val}
-            form(method="post",action="/").form-inline.navbar-form.pull-right
+            form(method="post",action="/login/authenticate/#{id}").form-inline.navbar-form.pull-right
              input(id="username",type="text",placeholder="Username",name="username",required).input-small
              input(id="password",type="password",placeholder="Password",name="password",required).input-small
              input(id="login",type="submit",name="login").btn.btn-info Submit                 
